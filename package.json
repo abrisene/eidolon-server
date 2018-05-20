@@ -31,6 +31,8 @@
     "dotenv": "5.0.1",
     "express": "4.16.3",
     "ip": "1.1.5",
+    "mongodb": "3.1.0-beta4",
+    "mongoose": "5.1.1",
     "nodemon": "1.17.4",
     "pug": "2.0.3",
     "redis": "2.8.0",
