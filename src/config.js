@@ -46,7 +46,7 @@ const getRedis = () => {
 
   if (client) {
     client.on('ready', () => {
-      console.log(chalk.green.bold(`>> REDIS Connected <<`));
+      console.log(chalk.green.bold(`>> Redis Connected <<`));
     });
   }
 
@@ -54,7 +54,7 @@ const getRedis = () => {
 }
 
 const getMongoDB = () => {
-  const { MONGODB, MONGODB_URL, PROD_MONGODB } = process.env;
+  const { MONGODB, MONGODB_URL, MONGODB_URI } = process.env;
   let client;
   let url;
 
@@ -62,10 +62,8 @@ const getMongoDB = () => {
     const mongoConfig = jsonFromEnv(MONGODB);
     url = mongoConfig.url;
 
-  } else if (MONGODB_URL) {
-    url = MONGODB_URL;
-  } else if (PROD_MONGODB) {
-    url = PROD_MONGODB;
+  } else if (MONGODB_URL || MONGODB_URI) {
+    url = MONGODB_URL || MONGODB_URI;
   }
 
   if (url) {
