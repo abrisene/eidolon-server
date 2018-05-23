@@ -24,7 +24,7 @@ import chalk from 'chalk';
  */
 
 export default function StripeRoutes(config) {
-  const { app, address, stripe } = config;
+  const { envConfig, app, address, stripe } = config;
   const { client, publicKey } = stripe;
 
   app.post('/api/charge/:amount', (req, res) => {
@@ -46,7 +46,7 @@ export default function StripeRoutes(config) {
     })
     .then((charge) => {
       const message = `$${(charge.amount / 100).toFixed(2)} Charge Successful`;
-      res.render('chargeTest', { amount, publicKey, message });
+      res.render('charge-test', { ...envConfig, amount, publicKey, message });
     })
     .catch(err => console.error(err));
   });
@@ -55,6 +55,6 @@ export default function StripeRoutes(config) {
     const { params } = req;
     const { amount } = params;
 
-    res.render('chargeTest', { address, amount, publicKey });
+    res.render('charge-test', { ...envConfig, address, amount, publicKey });
   });
 }

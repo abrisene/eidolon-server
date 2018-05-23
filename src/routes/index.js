@@ -25,61 +25,65 @@ import stripeRoutes from './routes.stripe';
  */
 
 export default function Routes(config) {
-  const { app, port, address, twilio, stripe } = config;
+  const { app, env, appName, apiPublicKeys } = config;
 
   app.set('view engine', 'pug');
   app.set('views', path.join(__dirname, '../views'));
 
-  // app.use(express.static('public'));
+  app.use(express.static('public'));
   app.disable('x-powered-by');
   // app.use(cookieParser());
   app.use(bodyParser.urlencoded({ extended: true }));
-  // app.use(bodyParser.json());
+  app.use(bodyParser.json());
 
   // == MIDDLEWARE ==
 
-  /*app.use((req, res, next) => {
-    if (options.urlClient !== undefined) {
-      res.header('Access-Control-Allow-Origin', `${options.urlClient}`);
+  app.use((req, res, next) => {
+    if (config.clientURL !== undefined) {
+      res.header('Access-Control-Allow-Origin', `${config.clientURL}`);
       res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     }
     next();
-  });*/
+  });
 
   // == MODULAR ROUTES ==
 
   if (config.twilio) {
-    twilioRoutes(config);
+    twilioRoutes({ ...config });
   }
 
   if (config.stripe) {
-    stripeRoutes(config);
+    stripeRoutes({ ...config });
   }
 
   // == BASE ROUTES ==
 
   app.get('/', (req, res) => {
-    res.render('index', { address });
+    res.render('index', { title: appName, env });
   });
 
   app.get('/index', (req, res) => {
-    res.render('index', { address });
+    res.render('index', { title: appName, env });
   });
 
-  /*app.get('/api/configs', (req, res) => {
+  app.get('/react', (req, res) => {
+    res.render('index-react', { title: appName, env });
+  })
+
+  app.get('/api/configs', (req, res) => {
     const configs = {
-      appName: options.appName,
-      firebaseConfig: options.firebaseConfigClient,
+      appName,
+      apiKeys: apiPublicKeys,
     };
 
     res.json(configs);
-  });*/
+  });
 
   app.get('/ping', (req, res) => {
     res.send('pong');
   });
 
   app.use((req, res) => {
-    res.status(404).render('404', { address });
+    res.status(404).render('404', { title: appName, env });
   });
 }

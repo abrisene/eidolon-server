@@ -21,6 +21,12 @@ dotenv.config();
 
 mongoose.Promise = global.Promise;
 
+/*
+ # Critical Variables
+ */
+
+const apiPublicKeys = {};
+
 /**
  # Utility Methods
  */
@@ -91,6 +97,7 @@ const getTwilio = () => {
 const getStripe = () => {
   const s = jsonFromEnv(process.env.STRIPE);
   const client = (s && s.secretKey && s.publicKey) ? new Stripe(s.secretKey) : undefined;
+  apiPublicKeys.stripe = s.publicKey || undefined;
   return { ...s, client };
 }
 
@@ -102,17 +109,14 @@ const config = {
   env: process.env.NODE_ENV || 'production',
   port: process.env.PORT || 8000,
   appName: process.env.APP_NAME || 'Eidolon',
+  clientURL: process.env.CLIENT_URL,
   app: express(),
   redis: getRedis(),
   mongodb: getMongoDB(),
   twilio: getTwilio(),
   stripe: getStripe(),
+  apiPublicKeys,
 };
-
-/**
- # Configs
- */
-
 
 /**
  # Module Exports
