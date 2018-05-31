@@ -1,6 +1,6 @@
 /*
  # index.js
- # Void Socket Index
+ # Socket Index
  */
 
 /*
@@ -8,7 +8,6 @@
  */
 
 import chalk from 'chalk';
-import socketIO from 'socket.io';
 
 /*
  # Critical Variables
@@ -20,8 +19,7 @@ import socketIO from 'socket.io';
 
 export default function Sockets(config) {
 
-  const { server } = config;
-  const io = socketIO(server);
+  const { io } = config;
 
   // Set socket.io listeners.
   io.on('connection', (socket) => {
@@ -31,6 +29,4 @@ export default function Sockets(config) {
       console.log(chalk.magenta.bold('>> Client Disconnected <<'));
     });
   });
-
-  return io;
 }

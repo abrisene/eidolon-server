@@ -4,8 +4,9 @@
  */
 
 import chalk from 'chalk';
-import dotenv from 'dotenv';
 import ip from 'ip';
+
+import socketIO from 'socket.io';
 
 import config, { appName, port, app } from './config';
 import routes from './routes';
@@ -13,7 +14,8 @@ import sockets from './sockets';
 
 const server = app.listen(port, () => {
   const address = `http://${ip.address()}:${port}`;
-  const serverConfig = { ...config, server, address };
+  const io = socketIO(server);
+  const serverConfig = { ...config, server, io, address };
 
   routes(serverConfig);
   sockets(serverConfig);

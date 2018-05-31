@@ -54,6 +54,9 @@ const getRedis = () => {
     client.on('ready', () => {
       console.log(chalk.green.bold(`>> Redis Connected <<`));
     });
+    client.on('error', (err) => {
+      console.log(chalk.red(`>> Redis Error: ${err}`));
+    });
   }
 
   return client;
@@ -82,7 +85,7 @@ const getMongoDB = () => {
       .then((db) => {
         console.log(chalk.green.bold(`>> MongoDB Connected <<`));
       })
-      .catch(err => console.error(err));
+      .catch(err => console.log(chalk.red(`>> MongDB Error: ${err}`)));
   }
 
   return client;
@@ -97,7 +100,7 @@ const getTwilio = () => {
 const getStripe = () => {
   const s = jsonFromEnv(process.env.STRIPE);
   const client = (s && s.secretKey && s.publicKey) ? new Stripe(s.secretKey) : undefined;
-  apiPublicKeys.stripe = s.publicKey || undefined;
+  apiPublicKeys.stripe = s ? s.publicKey || undefined : undefined;
   return { ...s, client };
 }
 
