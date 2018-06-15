@@ -24,7 +24,8 @@ import chalk from 'chalk';
  */
 
 export default function TwilioRoutes(config) {
-  const { app, twilio } = config;
+  const { app } = config.environment;
+  const { twilio } = config.modules;
   const { client } = twilio;
 
   app.post('/api/sms', (req, res) => {

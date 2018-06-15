@@ -1,6 +1,6 @@
 /*
  # config.js
- # Configuration File
+ # Database Configuration File
  */
 
 /**
@@ -9,13 +9,9 @@
 
 import chalk from 'chalk';
 import dotenv from 'dotenv';
-import express from 'express';
 
 import redis from 'redis';
 import mongoose from 'mongoose';
-
-import Twilio from 'twilio';
-import Stripe from 'stripe';
 
 dotenv.config();
 
@@ -32,6 +28,14 @@ const apiPublicKeys = {};
  */
 
 const jsonFromEnv = env => env ? JSON.parse(env) : undefined;
+
+/**
+ # Configuration Methods
+ */
+
+/**
+ ### REDIS
+ */
 
 const getRedis = () => {
   const { REDIS, REDIS_URL, REDISCLOUD_URL, NODE_ENV } = process.env;
@@ -62,6 +66,10 @@ const getRedis = () => {
   return client;
 }
 
+/**
+ ### MONGODB
+ */
+
 const getMongoDB = () => {
   const { MONGODB, MONGODB_URL, MONGODB_URI } = process.env;
   let client;
@@ -91,38 +99,20 @@ const getMongoDB = () => {
   return client;
 }
 
-const getTwilio = () => {
-  const t = jsonFromEnv(process.env.TWILIO);
-  const client = (t && t.account && t.key) ? new Twilio(t.account, t.key) : undefined;
-  return { ...t, client };
-}
-
-const getStripe = () => {
-  const s = jsonFromEnv(process.env.STRIPE);
-  const client = (s && s.secretKey && s.publicKey) ? new Stripe(s.secretKey) : undefined;
-  apiPublicKeys.stripe = s ? s.publicKey || undefined : undefined;
-  return { ...s, client };
-}
-
 /**
  # Critical Variables
  */
 
 const config = {
-  env: process.env.NODE_ENV || 'production',
-  port: process.env.PORT || 8000,
-  appName: process.env.APP_NAME || 'Eidolon',
-  clientURL: process.env.CLIENT_URL,
-  app: express(),
   redis: getRedis(),
   mongodb: getMongoDB(),
-  twilio: getTwilio(),
-  stripe: getStripe(),
-  apiPublicKeys,
 };
 
 /**
  # Module Exports
  */
 
-module.exports = config;
+module.exports = {
+  ...config,
+  apiPublicKeys,
+};

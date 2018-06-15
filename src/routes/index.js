@@ -25,7 +25,8 @@ import stripeRoutes from './routes.stripe';
  */
 
 export default function Routes(config) {
-  const { app, env, appName, apiPublicKeys } = config;
+  const { app, env, appName } = config.environment;
+  const { apiPublicKeys } = config;
 
   app.set('view engine', 'pug');
   app.set('views', path.join(__dirname, '../views'));
@@ -38,6 +39,7 @@ export default function Routes(config) {
 
   // == MIDDLEWARE ==
 
+  // CORS FOR CLIENT URL
   app.use((req, res, next) => {
     if (config.clientURL !== undefined) {
       res.header('Access-Control-Allow-Origin', `${config.clientURL}`);
@@ -48,11 +50,11 @@ export default function Routes(config) {
 
   // == MODULAR ROUTES ==
 
-  if (config.twilio) {
+  if (config.modules.twilio) {
     twilioRoutes({ ...config });
   }
 
-  if (config.stripe) {
+  if (config.modules.stripe) {
     stripeRoutes({ ...config });
   }
 

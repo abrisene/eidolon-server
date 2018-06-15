@@ -19,7 +19,7 @@ import chalk from 'chalk';
 
 export default function Sockets(config) {
 
-  const { io } = config;
+  const { io } = config.environment;
 
   // Set socket.io listeners.
   io.on('connection', (socket) => {
