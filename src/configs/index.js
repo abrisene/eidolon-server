@@ -7,9 +7,10 @@
  # Module Dependencies
  */
 
-import envConfig from './config.env.js';
-import dbConfig from './config.db.js';
-import moduleConfig from './config.modules.js';
+import envConfig from './config.env';
+import dbConfig from './config.db';
+import moduleConfig from './config.modules';
+import passportConfig from './config.passport';
 
 /*
  # Critical Variables

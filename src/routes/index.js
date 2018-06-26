@@ -10,8 +10,11 @@
 import chalk from 'chalk';
 import path from 'path';
 import express from 'express';
+import session from 'express-session';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 
+import authRoutes from './routes.auth';
 import twilioRoutes from './routes.twilio';
 import stripeRoutes from './routes.stripe';
 // import graphqlRoutes from './routes.graphql';
@@ -33,22 +36,37 @@ export default function Routes(config) {
 
   app.use(express.static('public'));
   app.disable('x-powered-by');
+
+  app.use(cors());
   // app.use(cookieParser());
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
 
+  app.use(session({
+    secret: 'passport-tutorial',
+    cookie: { maxAge: 60000 },
+    resave: false,
+    saveUninitialized: false,
+  }));
+
   // == MIDDLEWARE ==
 
+
+
   // CORS FOR CLIENT URL
-  app.use((req, res, next) => {
+  /*app.use((req, res, next) => {
     if (config.clientURL !== undefined) {
       res.header('Access-Control-Allow-Origin', `${config.clientURL}`);
       res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     }
     next();
-  });
+  });*/
 
   // == MODULAR ROUTES ==
+
+  if (true) {
+    authRoutes({ ...config });
+  }
 
   if (config.modules.twilio) {
     twilioRoutes({ ...config });

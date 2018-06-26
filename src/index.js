@@ -12,6 +12,7 @@ import ip from 'ip';
 
 import socketIO from 'socket.io';
 
+import models from './models'; // Must come before configs.
 import config from './configs';
 import routes from './routes';
 import sockets from './sockets';

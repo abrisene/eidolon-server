@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .container
+    .row.mt-5
+      .col-md-4
+      .col-md-4
+        if !user
+          form(action=`/api/register`, method="post")
+            input(type='email', name='email')
+            input(type='password', name='password')
+            input(type='submit' value='Submit')
+        else
+          h4=JSON.stringify(user)
