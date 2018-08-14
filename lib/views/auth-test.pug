@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .container
+    .row.mt-5
+      .col-md-4
+      .col-md-4
+        if !user
+          h4 Register
+          form(action=`/auth/register`, method="post")
+            input(type='email', name='email')
+            input(type='password', name='password')
+            input(type='submit' value='Submit')
+
+          h4 Login
+          form(action=`/auth/login`, method="post")
+            input(type='email', name='email')
+            input(type='password', name='password')
+            input(type='submit' value='Submit')
+        else
+          h4=JSON.stringify(user)
