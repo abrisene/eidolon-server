@@ -23,7 +23,7 @@ import chalk from 'chalk';
  # Module Exports
  */
 
-export default function StripeRoutes(config) {
+module.exports = function StripeRoutes(config) {
   console.log(Object.keys(config));
   const { app, env, appName } = config.environment;
   const { stripe } = config.modules;

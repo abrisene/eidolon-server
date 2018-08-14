@@ -16,6 +16,8 @@ import config from './configs';
 import routes from './routes';
 import sockets from './sockets';
 
+
+
 /*
  # Critical Variables
  */
@@ -37,6 +39,9 @@ const server = app.listen(port, () => {
     ...config,
     environment: { ...config.environment, server, io, address },
   };
+
+  config.environment.server = server;
+  config.environment.io = io;
 
   // Routes & Sockets
   routes(serverConfig);

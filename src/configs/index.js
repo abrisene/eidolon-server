@@ -9,6 +9,7 @@
 
 import envConfig from './config.env.js';
 import dbConfig from './config.db.js';
+import authConfig from './config.auth.js';
 import moduleConfig from './config.modules.js';
 
 /*
@@ -24,6 +25,7 @@ module.exports = {
   environment: envConfig,
   database: dbConfig,
   modules: moduleConfig,
+  auth: authConfig,
   apiPublicKeys: {
     ...envConfig.apiPublicKeys,
     ...dbConfig.apiPublicKeys,

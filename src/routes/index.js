@@ -12,9 +12,15 @@ import path from 'path';
 import express from 'express';
 import bodyParser from 'body-parser';
 
+import passport from 'passport';
+
+import { auth } from '../auth';
+
+import authRoutes from './routes.auth';
 import twilioRoutes from './routes.twilio';
 import stripeRoutes from './routes.stripe';
 // import graphqlRoutes from './routes.graphql';
+
 
 /*
  # Critical Variables
@@ -24,7 +30,7 @@ import stripeRoutes from './routes.stripe';
  # Module Exports
  */
 
-export default function Routes(config) {
+module.exports = function Routes(config) {
   const { app, env, appName } = config.environment;
   const { apiPublicKeys } = config;
 
@@ -33,9 +39,15 @@ export default function Routes(config) {
 
   app.use(express.static('public'));
   app.disable('x-powered-by');
+
+  app.use(passport.initialize());
+
   // app.use(cookieParser());
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
+
+  auth();
+
 
   // == MIDDLEWARE ==
 
@@ -49,6 +61,8 @@ export default function Routes(config) {
   });
 
   // == MODULAR ROUTES ==
+  
+  authRoutes({ ...config });
 
   if (config.modules.twilio) {
     twilioRoutes({ ...config });

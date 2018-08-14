@@ -23,7 +23,7 @@ import chalk from 'chalk';
  # Module Exports
  */
 
-export default function TwilioRoutes(config) {
+module.exports = function TwilioRoutes(config) {
   const { app } = config.environment;
   const { twilio } = config.modules;
   const { client } = twilio;
