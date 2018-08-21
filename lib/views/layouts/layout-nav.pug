@@ -1,12 +1,14 @@
+include ../includes/mixins
+
 html
   head
     title=title || 'Eidolon'
-    block head
     include ../includes/css
     block css
     include ../includes/head-scripts
+    block head
   body
-    block navbar
+    +navbar(title, [])
     block content
     include ../includes/body-scripts
     block footer

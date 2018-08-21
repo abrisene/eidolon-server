@@ -1,0 +1,13 @@
+extends layouts/layout-nav
+
+append head
+
+append navbar
+
+append content
+  .container
+    .col-md-12.mt-5
+      h1.display-1 404
+      h2.display-4=`${url} could not be found`
+
+append footer

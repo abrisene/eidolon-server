@@ -1,0 +1,42 @@
+extends layouts/layout-nav
+include includes/mixins
+
+append head
+  //- +google-meta('983605204371-orh832sioahh7cb2k419bi5hcn0qubfe.apps.googleusercontent.com')
+
+append navbar
+
+append content
+  //- +google-login-sdk('983605204371-orh832sioahh7cb2k419bi5hcn0qubfe.apps.googleusercontent.com')
+  //- +fb-login-sdk(198994517430628)
+  .container
+    .row.mt-5
+    .row.mt-5
+    .row
+      .col-md-12
+        h4.lead.ml-4 Sign Up
+      .col-md-4.mb-4.border-right
+        .row.mt-5
+          .col-md-12.ml-4
+            a(href='#') Sign Up with Facebook
+            //- +fb-login-button(198994517430628)
+        .row.mt-4
+          .col-md-12.ml-4
+            a(href='#') Sign Up with Google
+            //- +google-login-button('983605204371-orh832sioahh7cb2k419bi5hcn0qubfe.apps.googleusercontent.com')
+      .col-md-8
+        .row.ml-2
+          form.col-md-12(action='/auth/register' method='post')
+            .form-group
+              label(for='f-input-email') Email
+              input.form-control#f-input-email(type='email' name='email' placeholder='Email')
+            .form-group
+              label(for='f-input-password') Password
+              input.form-control#f-input-password(type='password' name='password' placeholder='Password')
+            //- .form-group
+            //-   label(for='f-input-password-confirm') Confirm Password
+            //-   input.form-control#f-input-password-confirm(type='password')
+            button.btn.btn-primary(type='submit' value='Submit') Sign Up
+
+
+append footer
