@@ -19,8 +19,8 @@
 - [ ] ORM
 
 ### Authentication
-- [ ] Passport Local
-- [ ] JWT
+- [x] Passport Local
+- [x] JWT
 - [ ] Google
 - [ ] Facebook
 
