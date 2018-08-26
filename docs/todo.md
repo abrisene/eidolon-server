@@ -23,6 +23,9 @@
 - [x] JWT
 - [ ] Google
 - [ ] Facebook
+- [ ] Twitter
+- [ ] LinkedIn
+- [ ] Pinterest
 
 ### App Functionality
 - [ ] Stripe (Payments)
