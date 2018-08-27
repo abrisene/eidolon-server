@@ -21,6 +21,8 @@
 ### Authentication
 - [x] Passport Local (0.3.0)
 - [x] JWT (0.3.0)
+- [x] Tokenized Validation (0.3.0)
+- [ ] Email Verification
 - [x] Google (0.3.0)
 - [x] Facebook (0.3.0)
 - [ ] Twitter
@@ -34,6 +36,7 @@
 ### Messaging
 - [x] Twilio (Telephony) (0.3.0)
 - [x] Mailgun (Email) (0.3.0)
+- [ ] Nodemailer (Email)
 
 ### Testing & Typechecking
 - [ ] Jest 
