@@ -1,37 +1,37 @@
 ## Functionality
 
 ### Common
-- [x] Config
-- [x] Server
+- [x] Config (0.3.0)
+- [x] Server (0.3.0)
 - [ ] SSL
 - [ ] Logging
 - [ ] Analytics
 
 ### Routing & API
-- [x] Express
-- [x] Socket.io
+- [x] Express (0.3.0)
+- [x] Socket.io (0.3.0)
 - [ ] GraphQL
 
 ### Database
-- [x] MongoDB
-- [x] Redis
+- [x] MongoDB (0.3.0)
+- [x] Redis (0.3.0)
 - [ ] SQL
 - [ ] ORM
 
 ### Authentication
-- [x] Passport Local
-- [x] JWT
-- [ ] Google
-- [ ] Facebook
+- [x] Passport Local (0.3.0)
+- [x] JWT (0.3.0)
+- [x] Google (0.3.0)
+- [x] Facebook (0.3.0)
 - [ ] Twitter
 - [ ] LinkedIn
 - [ ] Pinterest
 
 ### App Functionality
-- [ ] Stripe (Payments)
+- [x] Stripe (Payments) (0.3.0)
 - [ ] Braintree (Payments)
-- [ ] Twilio (Telephony)
-- [ ] Email (Mailgun)
+- [x] Twilio (Telephony) (0.3.0)
+- [ ] Mailgun (Email)
 
 ### Testing & Typechecking
 - [ ] Jest 
