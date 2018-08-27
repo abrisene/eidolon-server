@@ -27,11 +27,13 @@
 - [ ] LinkedIn
 - [ ] Pinterest
 
-### App Functionality
+### Storefront
 - [x] Stripe (Payments) (0.3.0)
 - [ ] Braintree (Payments)
+
+### Messaging
 - [x] Twilio (Telephony) (0.3.0)
-- [ ] Mailgun (Email)
+- [x] Mailgun (Email) (0.3.0)
 
 ### Testing & Typechecking
 - [ ] Jest 
