@@ -11,6 +11,7 @@ append content
     .row
       .col-md-12
         h4.lead.ml-4 Sign In
+    .row
       .col-md-4.mb-4.border-right
         .row.mt-5
           .col-md-12.ml-4
@@ -28,5 +29,7 @@ append content
               label(for='f-input-password') Password
               input.form-control#f-input-password(type='password' name='password' placeholder='Password')
             button.btn.btn-primary(type='submit' value='Submit') Sign In
+            small.col
+              a(href='/recover') Forgot Password?
 
 append footer

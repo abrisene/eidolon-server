@@ -1,0 +1,39 @@
+extends layouts/layout-nav
+
+append head
+
+append navbar
+
+append content
+  .container
+    .row.mt-5
+    .row.mt-5
+    .row
+      .col-md-12
+        h4.lead.ml-4 Reset Password
+
+    if (!token)
+      .row
+        .col-md-4.mb-4.border-right
+          p.ml-4.mt-4 Please enter your email address to reset your password. You will recieve an email with a reset link.
+        .col-md-8
+          .row.ml-2
+            form.col-md-12(action='/recover' method='post')
+              .form-group
+                label(for='f-input-email') Email
+                input.form-control#f-input-email(type='email' name='email' placeholder='Email')
+              button.btn.btn-primary(type='submit' value='Submit') Reset
+    else
+      .row
+        .col-md-4.mb-4.border-right
+          p.ml-4.mt-4 Please enter your new password.
+        .col-md-8
+          .row.ml-2
+            form.col-md-12(action=`/recover/${token}` method='post')
+              .form-group
+                label(for='f-input-password') Password
+                input.form-control#f-input-password(type='password' name='password' placeholder='Password')
+              button.btn.btn-primary(type='submit' value='Submit') Reset
+
+
+append footer
