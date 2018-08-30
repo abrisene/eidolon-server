@@ -8,7 +8,7 @@ html
     include ../includes/head-scripts
     block head
   body
-    +navbar(title, [])
+    +navbar(appName, navs || [], authNavs || [])
     block content
     include ../includes/body-scripts
     block footer
