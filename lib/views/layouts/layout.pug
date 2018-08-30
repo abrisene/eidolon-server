@@ -1,0 +1,12 @@
+html
+  head
+    title=title || 'Eidolon'
+    block head
+    include ../includes/css
+    block css
+    include ../includes/head-scripts
+  body
+    block navbar
+    block content
+    include ../includes/body-scripts
+    block footer

@@ -1,0 +1,48 @@
+mixin navbar(title, navs)
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    a.navbar-brand(href="/")=title
+    ul.navbar-nav.mr-auto
+      each nav in navs
+        li.nav-item
+          a.nav-link(href=nav.href)=nav.text
+      block navbar
+    a.mr-4(href="/login") Log In
+    a.btn.btn-primary(href="/register") Sign Up
+
+mixin fb-login-button(clientID)
+  if (clientID && clientID !== '')
+    //- .fb-login-button(data-max-rows='1' data-size='large' data-button-type='continue-with' data-show-faces='false' data-auto-logout-link='false' data-use-continue-as='false')
+    fb:login-button(scope='public_profile,email')
+  
+
+mixin fb-login-sdk(clientID)
+  if (clientID && clientID !== '')
+    .fb-root
+    script.
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '#{clientID}',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v3.1'
+        });
+      };
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=#{clientID}&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+mixin google-login-button(clientID)
+  if (clientID && clientID !== '')
+    .g-signing2(data-onsuccess='onSignIn')
+
+mixin google-login-sdk(clientID)
+  if (clientID && clientID !== '')
+      script(src='https://apis.google.com/js/platform.js' async defer)
+
+mixin google-meta(clientID)
+  if (clientID && clientID !== '')
+    meta(name='google-signing-client_id' content=`${clientID}.apps.googleusercontent.com`)

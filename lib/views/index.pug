@@ -1,17 +1,9 @@
-extends layout
+extends layouts/layout-nav
 
-append header
+append head
 
-block content
-  h1=title
+append navbar
+
+append content
 
 append footer
-  script.
-    const socket = io(location.href);
-    socket.on('connect', () => {});
-    socket.on('event', (data) => {});
-    socket.on('disconnect', () => {});
-    socket.on('setNumber', (payload) => {
-      const number = document.getElementById('number');
-      number.innerHTML = payload;
-    });
