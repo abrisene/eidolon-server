@@ -1,0 +1,27 @@
+extends layouts/layout-nav
+
+append head
+
+append navbar
+
+append content
+  .container
+    .row.mt-5
+    .row.mt-5
+    .row
+      .col-md-12
+        h4.lead.ml-4 Store
+    .row
+      .col-md-12
+        form(action=`/api/charge/${amount}`, method='post')
+          article
+            label= `Amount: $${Math.floor(amount / 100)}.${amount % 100}`
+          script(
+            src="//checkout.stripe.com/v2/checkout.js",
+            class="stripe-button",
+            data-key=publicKeys.stripe,
+            data-locale="auto",
+            data-description="Sample Charge",
+            data-amount=amount)
+
+append footer

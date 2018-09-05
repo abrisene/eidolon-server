@@ -1,6 +1,6 @@
 {
   "name": "eidolon-server",
-  "version": "0.5.1",
+  "version": "0.5.3",
   "description": "Opinionated API Server for Rapid Prototyping",
   "main": "./lib/index.js",
   "scripts": {
@@ -8,11 +8,15 @@
     "dev": "NODE_ENV=development nodemon ./lib",
     "test": "jest"
   },
-  "author": "David Robinson <dr@gamepsych.net>",
+  "author": "David Robinson <dr@monetise.io> (http://www.monetise.io)",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abrisene/eidolon-server/issues"
+  },
+  "homepage": "https://github.com/abrisene/eidolon-server#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Abrisene/eidolon-server"
+    "url": "git+https://github.com/abrisene/eidolon-server"
   },
   "devDependencies": {
     "eslint": "5.4.0",
