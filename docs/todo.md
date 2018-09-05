@@ -14,7 +14,7 @@
 
 ### Templating
 - [x] Pug (HTML) (0.3.0) (MVP)
-- [ ] Mailgen (HTML Email) (0.3.0)
+- [x] Mailgen (HTML Email) (0.3.0)
 
 ### Database
 - [x] MongoDB (0.3.0) (MVP)
