@@ -51,6 +51,9 @@
 
 ## Extended Functionality
 
+### Crowdsourcing
+- [ ] Mechanical Turk
+
 ### Storage
 - [ ] S3
 - [ ] Dropbox
