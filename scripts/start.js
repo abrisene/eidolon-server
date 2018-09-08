@@ -15,8 +15,10 @@ const eidolon = require('../lib');
 
 const main = async () => {
   try {
-    
+    await eidolon.init();
   } catch(err) {
     console.error(err);
   }
 };
+
+main();
