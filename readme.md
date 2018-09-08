@@ -18,14 +18,49 @@ An opinionated Express Server Boilerplate with Scaffolding for the following fea
 **Storefront**
   - Payments (Stripe)
 
-## Installation
+## Installation & Usage
 
-Run:
+Eidolon requires a .env for configuration. As of the current version, the following configs are required to ensure complete functionality:
 
 ```
-touch .env
 npm install
+touch .env
+```
+
+- MongoDB (For User Credentials)
+- Mailgun (For Email Validation & Password Reset)
+- Facebook App (For Facebook Login)
+- Google App (For Google Login)
+
+### Run
+
+To run the server with the settings in the config, run:
+
+```
 npm run start
+```
+
+### API
+
+Eidolon can be used as a configurable module which exposes configs, constants, models and other internal modules.
+
+```javascript
+const eidolon = require('../lib');
+const { config, constants, models, mail } = eidolon;
+
+/**
+ # Main
+ */
+
+const main = async () => {
+  try {
+    await eidolon.init();
+  } catch(err) {
+    console.error(err);
+  }
+};
+
+main();
 ```
 
 ### Environment Variables

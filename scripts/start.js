@@ -8,6 +8,7 @@
  */
 
 const eidolon = require('../lib');
+const { config, constants, models, mail } = eidolon;
 
 /**
  # Main
