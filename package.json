@@ -1,11 +1,12 @@
 {
   "name": "eidolon-server",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "Opinionated API Server for Rapid Prototyping",
   "main": "./lib/index.js",
   "scripts": {
     "start": "NODE_ENV=production node ./scripts/start",
     "dev": "NODE_ENV=development nodemon ./scripts/start",
+    "db:wipe": "NODE_ENV=development node ./scripts/wipe",
     "test": "jest"
   },
   "author": "David Robinson <dr@monetise.io> (http://www.monetise.io)",

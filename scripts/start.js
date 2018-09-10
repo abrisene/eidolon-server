@@ -8,7 +8,7 @@
  */
 
 const eidolon = require('../lib');
-const { config, constants, models, mail } = eidolon;
+// const { config, constants, models, mail } = eidolon;
 
 /**
  # Main
@@ -17,7 +17,7 @@ const { config, constants, models, mail } = eidolon;
 const main = async () => {
   try {
     await eidolon.init();
-  } catch(err) {
+  } catch (err) {
     console.error(err);
   }
 };
