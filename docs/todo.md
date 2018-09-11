@@ -51,6 +51,10 @@
 
 ## Extended Functionality
 
+### Spreadsheet
+- [ ] Google Sheets
+- [ ] Airtable
+
 ### Crowdsourcing
 - [ ] Mechanical Turk
 

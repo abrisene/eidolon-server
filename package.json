@@ -1,6 +1,6 @@
 {
   "name": "eidolon-server",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "Opinionated API Server for Rapid Prototyping",
   "main": "./lib/index.js",
   "scripts": {
@@ -27,6 +27,7 @@
     "nodemon": "1.18.3"
   },
   "dependencies": {
+    "airtable": "0.5.6",
     "axios": "0.18.0",
     "bcrypt": "3.0.0",
     "body-parser": "1.18.3",
