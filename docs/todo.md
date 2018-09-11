@@ -53,7 +53,7 @@
 
 ### Spreadsheet
 - [ ] Google Sheets
-- [ ] Airtable
+- [x] Airtable
 
 ### Crowdsourcing
 - [ ] Mechanical Turk
