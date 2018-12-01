@@ -74,6 +74,7 @@ APP_NAME          // A String, displayed in Emails.
 PORT              // Port for the http Server, Passed to Express.
 
 CLIENT_URL        // The URL of the client, used for CORS and for emails.
+CORS_URLS         // An array of additional URLS which should be enabled for CORS. Will enable CORS universally if set to '*'
 LOGO_URL          // The URL of the app's logo.
 ```
 
