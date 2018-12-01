@@ -85,7 +85,7 @@ MONGODB {         // An optional JSON object containing redis credentials.
 }
 
 MONGODB_URL       // A URL to a mongoDB database.
-
+MONGODB_URI       // A URL to a mongoDB database.
 PROD_MONGODB      // A URL to a mongoDB database. This value is populated by Heroku's Mongo Lab addon.
 
 REDIS {           // An optional JSON object containing redis credentials.
@@ -94,7 +94,6 @@ REDIS {           // An optional JSON object containing redis credentials.
 }
 
 REDIS_URL         // A URL to a redis instance. This value is populated by Heroku's Redis addon.
-
 REDISCLOUD_URL    // A URL to a redis instance. This value is populated by Heroku's Redis Cloud addon.
 
 ```
@@ -125,20 +124,20 @@ SQUARE {}         // Not yet supported.
 
 #### Authentication
 ```
-JWT_SECRET        // JWT Secret. **THIS SHOULD NOT BE SHARED**
+JWT_SECRET        // JWT Secret. **THIS SHOULD NOT BE SHARED EVER**
 JWT_ISSUER        // Optional Issuer property for JWT
 JWT_AUDIENCE      // Optional Audience property for JWT
 
 GOOGLE_AUTH {
   "clientID"
   "clientSecret"
-  "callbackURL"
+  "callbackURL"   // Optional callback URL. This will default to <HOSTNAME>/auth/google/redirect
 }
 
 FACEBOOK_AUTH {
   "clientID"
   "clientSecret"
-  "callbackURL"
+  "callbackURL"   // Optional callback URL. This will default to <HOSTNAME>/auth/facebook/redirect
 }
 
 TWITTER_AUTH {}   // Not yet supported.
