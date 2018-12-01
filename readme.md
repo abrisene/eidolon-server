@@ -125,8 +125,8 @@ SQUARE {}         // Not yet supported.
 #### Authentication
 ```
 JWT_SECRET        // JWT Secret. **THIS SHOULD NOT BE SHARED EVER**
-JWT_ISSUER        // Optional Issuer property for JWT
-JWT_AUDIENCE      // Optional Audience property for JWT
+JWT_ISSUER        // Optional Issuer property for JWT. Defaults to hostname.
+JWT_AUDIENCE      // Optional Audience property for JWT. Defaults to hostname.
 
 GOOGLE_AUTH {
   "clientID"
