@@ -42,6 +42,10 @@
 - [ ] Paypal (Payments)
 - [ ] Square (Payments)
 
+### PubSub
+- [x] PubNub (0.8.1)
+- [x] Ably (0.8.1)
+
 ### Messaging
 - [x] Mailgun (Email) (MVP) (0.4.0)
 - [x] Twilio (Telephony) (0.3.0)

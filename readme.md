@@ -79,6 +79,7 @@ LOGO_URL          // The URL of the app's logo.
 ```
 
 #### Databases
+
 ```
 MONGODB {         // An optional JSON object containing redis credentials.
   "url"           // URL of the mongoDB database.
@@ -98,7 +99,7 @@ REDISCLOUD_URL    // A URL to a redis instance. This value is populated by Herok
 
 ```
 
-#### APIs
+#### PubSub
 
 ```
 PUBNUB {          // A JSON object containing PubNub credentials.
@@ -107,6 +108,15 @@ PUBNUB {          // A JSON object containing PubNub credentials.
   "secretKey"     // Optional Secret Key
 }
 
+ABLY {            // A JSON object containing Ably credentials
+  "serverKey"     // The Ably API key to use on the server
+  "clientKey"     // The Ably API key to use on the client
+}
+```
+
+#### Messaging
+
+```
 MAILGUN {         // A JSON object containing Mailgun credentials. Authentication relies on this.
   "key"           // The Mailgun API key.
   "pubkey"        // An optional Public Key
@@ -117,7 +127,12 @@ TWILIO {          // An optional JSON object containing Twilio credentials.
   "account"       // The Twilio account ID.
   "key"           // The Twilio account's key.
 }
+```
 
+#### Payments
+
+
+```
 STRIPE {          // An optional JSON object containing Stripe credentials.
   "secretKey"     // The account's Secret Key.
   "publicKey"     // The account's Public Key.
@@ -129,6 +144,7 @@ SQUARE {}         // Not yet supported.
 ```
 
 #### Authentication
+
 ```
 JWT_SECRET        // JWT Secret. **THIS SHOULD NOT BE SHARED EVER**
 JWT_ISSUER        // Optional Issuer property for JWT. Defaults to hostname.
