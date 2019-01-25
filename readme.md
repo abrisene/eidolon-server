@@ -101,6 +101,12 @@ REDISCLOUD_URL    // A URL to a redis instance. This value is populated by Herok
 #### APIs
 
 ```
+PUBNUB {          // A JSON object containing PubNub credentials.
+  "publishKey"    // PubNub publish key
+  "subscribeKey"  // PubNub subscribe key
+  "secretKey"     // Optional Secret Key
+}
+
 MAILGUN {         // A JSON object containing Mailgun credentials. Authentication relies on this.
   "key"           // The Mailgun API key.
   "pubkey"        // An optional Public Key
