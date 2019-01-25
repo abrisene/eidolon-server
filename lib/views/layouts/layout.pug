@@ -1,10 +1,14 @@
 html
   head
     title=title || 'Eidolon'
+    meta(http-equiv='Content-Type' content='text/html; charset=utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
     block head
     include ../includes/css
+    include ../includes/fonts
     block css
     include ../includes/head-scripts
+    block head
   body
     block navbar
     block content
