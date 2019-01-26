@@ -1,5 +1,7 @@
 ## Eidolon
 
+[GitHub version](https://badge.fury.io/gh/abrisene%2Facausal.svg)](https://badge.fury.io/gh/abrisene%2Facausal)
+
 An opinionated Express Server Boilerplate with Scaffolding for the following features:
 
 **Database**
@@ -12,11 +14,15 @@ An opinionated Express Server Boilerplate with Scaffolding for the following fea
   - Rendering (Pug)
 
 **Messaging**
+  - PubSub (PubNub & Ably)
   - Email (Mailgun)
   - SMS & Telephony (Twilio)
 
 **Storefront**
   - Payments (Stripe)
+
+**Spreadsheets**
+  - Airtable
 
 ## Installation & Usage
 
