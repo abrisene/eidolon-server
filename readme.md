@@ -1,6 +1,6 @@
 ## Eidolon
 
-[GitHub version](https://badge.fury.io/gh/abrisene%2Facausal.svg)](https://badge.fury.io/gh/abrisene%2Facausal)
+[![GitHub version](https://badge.fury.io/gh/abrisene%2Feidolon-server.svg)](https://badge.fury.io/gh/abrisene%2Feidolon-server)
 
 An opinionated Express Server Boilerplate with Scaffolding for the following features:
 
