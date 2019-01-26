@@ -42,14 +42,26 @@
 - [ ] Paypal (Payments)
 - [ ] Square (Payments)
 
+### PubSub
+- [x] PubNub (0.8.1)
+- [x] Ably (0.8.2)
+- [ ] Google PubSub
+
 ### Messaging
 - [x] Mailgun (Email) (MVP) (0.4.0)
 - [x] Twilio (Telephony) (0.3.0)
+- [ ] Sendgrid
 - [ ] Nodemailer (Email)
 - [ ] Discord (Chat)
 - [ ] Slack (Chat)
 
 ## Extended Functionality
+
+### BI & Analytics
+- [ ] Google Analytics
+- [ ] Mixpanel
+- [ ] Grafana
+- [ ] Kibana
 
 ### Spreadsheet
 - [ ] Google Sheets
