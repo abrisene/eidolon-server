@@ -45,6 +45,7 @@
 ### PubSub
 - [x] PubNub (0.8.1)
 - [x] Ably (0.8.2)
+- [ ] Google PubSub
 
 ### Messaging
 - [x] Mailgun (Email) (MVP) (0.4.0)
