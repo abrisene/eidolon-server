@@ -10,7 +10,7 @@
 ### Routing & API
 - [x] Express (0.3.0) (MVP)
 - [x] Socket.io (0.3.0) (MVP)
-- [ ] GraphQL
+- [x] GraphQL (0.9.0)
 
 ### Templating
 - [x] Pug (HTML) (0.3.0) (MVP)
@@ -50,7 +50,7 @@
 ### Messaging
 - [x] Mailgun (Email) (MVP) (0.4.0)
 - [x] Twilio (Telephony) (0.3.0)
-- [ ] Sendgrid
+- [ ] Sendgrid (Note: Sendgrid was acquired by Twilio, there are plans to consolidate the API)
 - [ ] Nodemailer (Email)
 - [ ] Discord (Chat)
 - [ ] Slack (Chat)

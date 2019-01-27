@@ -30,6 +30,7 @@
     "ably": "1.0.23",
     "airtable": "0.5.6",
     "apollo-server": "2.3.2",
+    "apollo-server-cache-redis": "0.2.2",
     "apollo-server-express": "2.3.2",
     "axios": "0.18.0",
     "bcrypt-nodejs": "0.0.3",
